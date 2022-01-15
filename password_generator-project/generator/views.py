@@ -32,15 +32,18 @@ def password(request):
     for x in range(length):
         thepassword += random.choice(strLower)
 
-    print("User pick password: {}".format(thepassword))
+    print("\n User IP:{} \n User pick password: {}".format(ip_adress(request),thepassword))
     return render(request, 'generator/password.html', {'password':thepassword})
 
-def about(request):
-
+def ip_adress(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
        ip = x_forwarded_for.split(',')[-1].strip()
+       return ip
     else:
        ip = request.META.get('REMOTE_ADDR')
+       return ip
 
+def about(request):
+    ip = ip_adress(request)
     return render(request, 'generator/about.html', {'ip':ip})
