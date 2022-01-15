@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 404 Makes bear sad 🐻😭</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<h1>Password Generator</h1>
+
+<form action="{% url 'password' %}">
+    <select name="length">
+        <option value=6>6 char long</option>
+        <option value=8 selected="selected">8 char long</option>
+        <option value=10>10 char long</option>
+        <option value=12>12 char long</option>
+        <option value=16>16 char long</option>
+        <option value=18>18 char long</option>
+        <option value=24>24 char long</option>
+        <option value=32>32 char long</option>
+    </select>
+<br>
+    <input type="checkbox" name="uppercase"> Uppercase
+<br>
+    <input type="checkbox" name="numbers"> Numbers
+<br>
+    <input type="checkbox" name="special"> Special Character
+<br>
+
+    <input type="submit" value="Generate Password">
+</form>
+<br>
+<h2><a href="about/">About</a></h2>
+<!-- partial:index.partial.html -->
+<div id="app"></div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/styled-components/3.2.1/styled-components.min.js'></script><script  src="./script.js"></script>
